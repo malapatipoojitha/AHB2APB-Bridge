@@ -60,7 +60,7 @@ parameter IDLE = 2'b00, BUSY = 2'b01, NON_SEQ = 2'b10, SEQ = 2'b11;
 //pipelining adress,data and hwrite
 always@(posedge HCLK or negedge HRESET)
   begin:pipeline_block
-    if(~HRESET)//Negative Reset
+	  if(~HRESET)//Asynchronous Negative Reset
       begin : reset_block
 
         HADDR_1 <= 0;
